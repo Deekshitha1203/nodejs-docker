@@ -1,7 +1,9 @@
-var http = require('http');
+require('@dynatrace/opentelemetry-azure-functions');
+
+const http = require('http')
 
 //create a server object:
-http.createServer(function (req, res) {
+http.createServer((req, res) => {
   res.write('** Hey my app was deployed :) **'); //write a response to the client
   res.end(); //end the response
-}).listen(80); //the server object listens on port 80
+}).listen(3000); //the server object listens on port 80
